@@ -31,21 +31,23 @@ export default class ConditionalTemplateStringsPlugin extends FlexPlugin {
       + '{{/if}}{{/if}}'
     );
     const taskLineTwoCustomAssigned = (
-      '{{#if task.attributes.conversations.campaign}} '
-        + `${taskLineTwoDefaultAssigned} | Campaign: {{task.attributes.conversations.campaign}} `
+      `${taskLineTwoDefaultAssigned} `
+      + '{{#if task.attributes.conversations.campaign}} '
+        + '| Campaign: {{task.attributes.conversations.campaign}} '
       + '{{else}} {{#if task.attributes.directExtension}} '
-        + `${taskLineTwoDefaultAssigned} | Direct Call`
+        + '| Direct Call'
       + '{{else}} '
-        + `${taskLineTwoDefaultAssigned} | Queue: {{task.queueName}}`
+        + '| Queue: {{task.queueName}}'
       + '{{/if}}{{/if}}'
     );
     const taskLineTwoCustomWrapup = (
-      '{{#if task.attributes.conversations.campaign}} '
-        + `${taskLineTwoDefaultWrapup} | Campaign: {{task.attributes.conversations.campaign}} `
+      `${taskLineTwoDefaultWrapup} `
+      + '{{#if task.attributes.conversations.campaign}} '
+        + '| Campaign: {{task.attributes.conversations.campaign}} '
       + '{{else}} {{#if task.attributes.directExtension}} '
-        + `${taskLineTwoDefaultWrapup} | Direct Call`
+        + '| Direct Call'
       + '{{else}} '
-        + `${taskLineTwoDefaultWrapup} | Queue: {{task.queueName}}`
+        + '| Queue: {{task.queueName}}'
       + '{{/if}}{{/if}}'
     );
 
